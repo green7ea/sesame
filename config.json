@@ -1,0 +1,28 @@
+{
+  "elems": [
+    {
+      "protocol": {
+        "http,https": {
+          "contains": ["youtube.com/watch?", "youtu.be/watch?"],
+          "use": "mpv"
+        }
+      }
+    },
+
+    {
+      "mime": {
+        "video": "mpv"
+      }
+    },
+
+    {
+      "extension": {
+        "pdf": "evince"
+      }
+    },
+
+    {
+      "use": "xdg-open"
+    }
+  ]
+}

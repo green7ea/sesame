@@ -1,0 +1,11 @@
+[package]
+name = "sesame"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+dirs = "3.0.2"
+mime_guess = "2.0.3"
+nix = "0.20.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0.64"
