@@ -1,28 +1,26 @@
-{
-  "elems": [
-    {
-      "protocol": {
-        "http,https": {
-          "contains": ["youtube.com/watch?", "youtu.be/watch?"],
-          "use": "mpv"
-        }
+[
+  {
+    "protocol": {
+      "http,https": {
+        "contains": ["youtube.com/watch?", "youtu.be/watch?"],
+        "use": "mpv"
       }
-    },
-
-    {
-      "mime": {
-        "video": "mpv"
-      }
-    },
-
-    {
-      "extension": {
-        "pdf": "evince"
-      }
-    },
-
-    {
-      "use": "xdg-open"
     }
-  ]
-}
+  },
+
+  {
+    "mime": {
+      "video": "mpv"
+    }
+  },
+
+  {
+    "extension": {
+      "pdf": "zathura"
+    }
+  },
+
+  {
+    "use": "/usr/bin/xdg-open"
+  }
+]
