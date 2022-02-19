@@ -29,15 +29,15 @@ fn exec(program: &str, args: &[String]) -> Result<(), String>
 
 fn main()
 {
-    let args: Vec<String> = std::env::args().collect();
+    let mut args = std::env::args();
 
-    let program = match args.get(0)
+    let program = match args.next()
     {
         Some(x) => x,
-        None => "sesame",
+        None => String::from("sesame"),
     };
 
-    let arg = match args.get(1)
+    let arg = match args.next()
     {
         Some(x) => x,
         None =>
@@ -49,7 +49,7 @@ fn main()
         },
     };
 
-    let info = FileInfo::new(arg);
+    let info = FileInfo::new(&arg);
 
     let config_file = match dirs::config_dir()
     {
@@ -101,6 +101,7 @@ fn main()
 
     if let Some(dispatch) = dispatch
     {
+        let args: Vec<String> = std::env::args().skip(1).collect();
         match exec(&dispatch, &args)
         {
             Ok(_) => (),
