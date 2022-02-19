@@ -11,8 +11,10 @@ pub trait Dispatch
     fn apply(&self, file_info: &FileInfo) -> Option<String>;
 }
 
-impl Dispatch for String {
-    fn apply(&self, _: &FileInfo) -> Option<String> {
+impl Dispatch for String
+{
+    fn apply(&self, _: &FileInfo) -> Option<String>
+    {
         Some(self.clone())
     }
 }
