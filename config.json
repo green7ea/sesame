@@ -1,10 +1,13 @@
 [
   {
     "protocol": {
-      "http,https": {
-        "contains": ["youtube.com/watch?", "youtu.be/watch?"],
-        "use": "mpv"
-      }
+      "http,https": [
+        {
+          "contains": ["youtube.com/watch?", "youtu.be/watch?"],
+          "use": "mpv"
+        },
+        "firefox"
+      ]
     }
   },
 
@@ -20,7 +23,5 @@
     }
   },
 
-  {
-    "use": "/usr/bin/xdg-open"
-  }
+  "/usr/bin/xdg-open"
 ]
