@@ -1,23 +1,26 @@
 # Sesame – an xdg-open alternative
 
-*Xdg-open* decides what program to use to open a file or URL but it
-can be difficult to configure, inflexible and slow. This is where
-*sesame* comes in as an *xdg-open* alternative.
+When you double click on a file, *xdg-open* decides what program to
+use to open it. __*xdg-open* is difficult to configure, inflexible and
+slow__. This is where __*sesame*__ comes in as an __*xdg-open*
+alternative__.
 
 *Sesame* is:
 
-- easy and intuitive to configure for a tech enthusiast,
-- a bit for flexible,
-- faster to execute.
+- configured with a __single JSON file__,
+- able to have __complex rules including regex__,
+- __faster__.
 
-By using a single JSON file as a configuration, *sesame* can be
-configure using a simple text editor and leads to more predictable
-results. The configuration file is read in order and the first
-program that matches is used.
+By using a single JSON file as a configuration, it's __easy to
+predict__ which program will be used and __easy to change__. Not only
+that but *sesame* is a __single executable__ that open a __single
+configuration__ file so it's pretty __lightweight__.
 
-*Sesame*'s configuration is a bit more powerful than simply choosing
-a program to use based on a type, it allows you to nest conditions
-and make smarter decisions. A good example of this is:
+*Sesame*'s __configuration__ is a bit more __powerful__ than simply
+choosing a program to use based on a type, it allows you to __nest
+conditions__ and make smarter decisions. The __first condition that
+passes__ determines which program is used to open the file. A good
+example of this is:
 
 - use *qutebrowser* to open `http` and `https` links,
 - but use *mpv* to play *youtube* videos,
@@ -48,3 +51,6 @@ executable (~684 KB) which lets it do its job by using only two files:
 
 - the *sesame* executable,
 - the configuration file.
+
+This is less flexible than the shell script that is often used but
+makes it faster and easier to understand.
