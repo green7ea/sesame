@@ -19,7 +19,8 @@
 
   {
     "extension": {
-      "pdf": "zathura"
+      "pdf": "zathura",
+      "ts": "kitty ${EDITOR}"
     }
   },
 

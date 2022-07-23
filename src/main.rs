@@ -12,15 +12,17 @@ const PROJECT: &str = "https://github.com/green7ea/sesame";
 
 fn exec(program: &str, args: &[String]) -> Result<(), String>
 {
-    let env = CString::new("/usr/bin/env").unwrap();
-    let cstr_program = CString::new(program).unwrap();
+    let args: Vec<CString> = vec![
+        String::from("/usr/bin/env"),
+        String::from("-S"),
+        String::from(program),
+    ]
+    .iter()
+    .chain(args.iter())
+    .map(|x| CString::new(x.as_str()).unwrap())
+    .collect();
 
-    let args: Vec<CString> = vec![env.clone(), cstr_program]
-        .into_iter()
-        .chain(args.iter().map(|x| CString::new(x.as_str()).unwrap()))
-        .collect();
-
-    match execv(&env, &args)
+    match execv(&args[0], &args)
     {
         Ok(_) => Ok(()),
         Err(_) => Err(format!("Couldn't run program {}", program)),
